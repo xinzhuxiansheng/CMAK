@@ -20,7 +20,7 @@ assemblyMergeStrategy in assembly := {
   case "play/core/server/ServerWithStop.class" => MergeStrategy.first
   case other => (assemblyMergeStrategy in assembly).value(other)
 }
-
+resolvers += "Local Maven Repository" at "file://D:/software/dev_soft/Maven/repository/repos"
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.5.19",
   "com.typesafe.akka" %% "akka-slf4j" % "2.5.19",
@@ -39,7 +39,7 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "log4j-over-slf4j" % "1.7.25",
   "com.adrianhurt" %% "play-bootstrap" % "1.4-P26-B4" exclude("com.typesafe.play", "*"),
   "org.clapper" %% "grizzled-slf4j" % "1.3.3",
-  "org.apache.kafka" %% "kafka" % "2.4.0" exclude("log4j","log4j") exclude("org.slf4j", "slf4j-log4j12") force(),
+  "org.apache.kafka" %% "kafka" % "2.4.1.clientid" exclude("log4j","log4j") exclude("org.slf4j", "slf4j-log4j12") force(),
   "org.apache.kafka" % "kafka-streams" % "2.2.0",
   "com.beachape" %% "enumeratum" % "1.5.13",
   "com.github.ben-manes.caffeine" % "caffeine" % "2.6.2",
